@@ -112,8 +112,10 @@ const IngredientsModule = () => {
               </div>
             </div>
           ))
-        ) : (
+        ) : recipes.length == 1 ? (
           <p>loading...</p>
+        ) : (
+          <p></p>
         )}
       </div>
     </div>
