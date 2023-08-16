@@ -1,0 +1,77 @@
+.container {
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.form {
+  margin-bottom: 20px;
+}
+
+.input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.addButton {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.ingredientsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.ingredientBubble {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 100px;
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+}
+
+.removeButton {
+  background-color: #ff6b6b;
+  color: white;
+  border: 1px;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-left: 6px;
+}
+
+.findRecipesButton {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.recipesTitle {
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+.recipesContent {
+  font-size: 18px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+}
