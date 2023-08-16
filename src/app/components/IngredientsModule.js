@@ -113,7 +113,7 @@ const IngredientsModule = () => {
             </div>
           ))
         ) : (
-          <p>loading</p>
+          <p>loading...</p>
         )}
       </div>
     </div>
