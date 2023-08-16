@@ -15,13 +15,13 @@
 
 import { NextResponse } from "next/server";
 import { Configuration, OpenAIApi } from "openai";
-const openAIKey = process.env.OPEN_API_KEY;
+const openAIKey = process.env.OPEN_AI_KEY;
 
 export async function POST(request) {
   const req = await request.json();
   console.log(req.ingredients);
   const configuration = new Configuration({
-    apiKey: "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",
+    apiKey: openAIKey,
   });
   const openai = new OpenAIApi(configuration);
 
