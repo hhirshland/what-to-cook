@@ -12,6 +12,7 @@ export async function POST(request) {
   });
   const openai = new OpenAIApi(configuration);
 
+  /*
   const completion = await openai.createChatCompletion({
     model: "gpt-3.5-turbo",
     messages: [
@@ -76,10 +77,11 @@ export async function POST(request) {
     ],
   });
   console.log(completion.data.choices[0].message);
+  */
 
   //const data = request.body;
   return NextResponse.json({
-    message: completion.data.choices[0].message,
+    message: "testing shiiiii", //completion.data.choices[0].message,
   });
 }
 

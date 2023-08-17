@@ -64,6 +64,7 @@ const IngredientsModule = () => {
         console.log(data.message.content);
         console.log(data.message.content[0].title);
       }
+      console.log("got passed error if else alive");
 
       //setRecipes(JSON.parse(data.message.content));
       //console.log(recipes);
