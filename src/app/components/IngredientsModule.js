@@ -50,6 +50,7 @@ const IngredientsModule = () => {
         },
         body: JSON.stringify(requestBody),
       });
+      console.log(response);
       const data = await response.json();
       console.log("test2");
       console.log(response);
