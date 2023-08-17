@@ -4,10 +4,14 @@ import { useState } from "react";
 import styles from "./IngredientsModule.module.css"; // Import your CSS module
 import Image from "next/image";
 
+const x = process.env.TEST_KEY;
+
 const IngredientsModule = () => {
   const [ingredients, setIngredients] = useState([]);
   const [newIngredient, setNewIngredient] = useState("");
   const [recipes, setRecipes] = useState([]);
+  //const [dietaryPreference, setDietaryPreference] = useState([])
+  //const [newDietaryPreference, setNewDietaryPreference] = useState([])
 
   const handleInputChange = (event) => {
     setNewIngredient(event.target.value);
@@ -20,6 +24,7 @@ const IngredientsModule = () => {
       setNewIngredient("");
     }
     console.log(process.env.OPEN_AI_KEY);
+    console.log(x);
   };
 
   const removeIngredient = (index) => {
