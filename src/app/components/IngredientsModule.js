@@ -44,8 +44,13 @@ const IngredientsModule = () => {
       body: JSON.stringify(requestBody),
     });
     console.log(response);
-    const data = await response.json();
-    console.log(data);
+
+    if (!response.ok) {
+      console.error("Error: ", response.statusText);
+    } else {
+      const data = await response.json();
+      console.log(data);
+    }
     /*
     setRecipes(["Loading..."]);
     console.log(ingredients);
