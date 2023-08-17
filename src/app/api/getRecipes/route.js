@@ -3,16 +3,14 @@ import { Configuration, OpenAIApi } from "openai";
 const openAIKey = process.env.OPEN_AI_KEY;
 
 export async function POST(request) {
-  console.log(openAIKey);
   const req = await request.json();
   console.log(req.ingredients);
-  /*
+
   const configuration = new Configuration({
     apiKey: openAIKey,
   });
   const openai = new OpenAIApi(configuration);
-*/
-  /*
+
   const completion = await openai.createChatCompletion({
     model: "gpt-3.5-turbo",
     messages: [
@@ -77,10 +75,10 @@ export async function POST(request) {
     ],
   });
   console.log(completion.data.choices[0].message);
-*/
+
   //const data = request.body;
   return NextResponse.json({
-    message: openAIKey, //completion.data.choices[0].message,
+    message: completion.data.choices[0].message,
   });
 }
 

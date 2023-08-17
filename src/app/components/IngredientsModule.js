@@ -33,6 +33,20 @@ const IngredientsModule = () => {
   };
 
   const handleSubmit = async (event) => {
+    const requestBody = {
+      ingredients: ingredients,
+    };
+    const response = await fetch("/api/helloWorld", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(requestBody),
+    });
+    console.log(response);
+    const data = await response.json();
+    console.log(data);
+    /*
     setRecipes(["Loading..."]);
     console.log(ingredients);
     try {
@@ -64,6 +78,8 @@ const IngredientsModule = () => {
     } catch (error) {
       console.error(error);
     }
+
+    */
   };
 
   return (
