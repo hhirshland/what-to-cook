@@ -21,7 +21,7 @@ export async function POST(request) {
   const req = await request.json();
   console.log(req.ingredients);
   const configuration = new Configuration({
-    apiKey: openAIKey,
+    apiKey: "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", //openAIKey,
   });
   const openai = new OpenAIApi(configuration);
 
