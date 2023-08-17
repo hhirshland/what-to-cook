@@ -33,25 +33,6 @@ const IngredientsModule = () => {
   };
 
   const handleSubmit = async (event) => {
-    const requestBody = {
-      ingredients: ingredients,
-    };
-    const response = await fetch("/api/helloWorld", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(requestBody),
-    });
-    console.log(response);
-
-    if (!response.ok) {
-      console.error("Error: ", response.statusText);
-    } else {
-      const data = await response.json();
-      console.log(data);
-    }
-    /*
     setRecipes(["Loading..."]);
     console.log(ingredients);
     try {
@@ -70,12 +51,19 @@ const IngredientsModule = () => {
         body: JSON.stringify(requestBody),
       });
       console.log(response);
-      //const data = await response.json();
-      console.log("test2");
-      console.log(response);
-      console.log(data);
-      console.log(data.message.content);
-      console.log(data.message.content[0].title);
+
+      if (!response.ok) {
+        console.error("Error: ", response.statusText);
+      } else {
+        const data = await response.json();
+        console.log(data);
+
+        console.log("test2");
+        console.log(response);
+        console.log(data);
+        console.log(data.message.content);
+        console.log(data.message.content[0].title);
+      }
 
       //setRecipes(JSON.parse(data.message.content));
       //console.log(recipes);
@@ -83,8 +71,6 @@ const IngredientsModule = () => {
     } catch (error) {
       console.error(error);
     }
-
-    */
   };
 
   return (

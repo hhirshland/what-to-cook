@@ -3,6 +3,7 @@ import { Configuration, OpenAIApi } from "openai";
 const openAIKey = process.env.OPEN_AI_KEY;
 
 export async function POST(request) {
+  console.log(openAIKey);
   const req = await request.json();
   console.log(req.ingredients);
 
