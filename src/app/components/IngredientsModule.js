@@ -51,13 +51,14 @@ const IngredientsModule = () => {
         body: JSON.stringify(requestBody),
       });
       console.log(response);
-      const data = await response.json();
+      //const data = await response.json();
       console.log("test2");
       console.log(response);
       console.log(data);
       console.log(data.message.content);
       console.log(data.message.content[0].title);
-      setRecipes(JSON.parse(data.message.content));
+
+      //setRecipes(JSON.parse(data.message.content));
       //console.log(recipes);
       //console.log(recipes)
     } catch (error) {
