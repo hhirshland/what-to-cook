@@ -6,6 +6,7 @@ import IngredientsModule from "./components/IngredientsModule";
 export default function Home() {
   return (
     <main className={styles.main}>
+      <Image src="/logo.png" width={300} height={300} alt="logo"></Image>
       <h1>What to cook</h1>
       <p>Find a tasty meal to cook with the ingredients you have!</p>
       <IngredientsModule />

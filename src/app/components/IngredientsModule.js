@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import styles from "./IngredientsModule.module.css"; // Import your CSS module
+import Image from "next/image";
 
 const IngredientsModule = () => {
   const [ingredients, setIngredients] = useState([]);
@@ -18,6 +19,7 @@ const IngredientsModule = () => {
       setIngredients([...ingredients, newIngredient]);
       setNewIngredient("");
     }
+    console.log(process.env.OPEN_AI_KEY);
   };
 
   const removeIngredient = (index) => {
@@ -114,7 +116,12 @@ const IngredientsModule = () => {
             </div>
           ))
         ) : recipes.length == 1 ? (
-          <p>loading...</p>
+          <Image
+            src="/cooking_gif.gif"
+            width={366}
+            height={279}
+            alt="cooking gif"
+          ></Image>
         ) : (
           <p></p>
         )}
