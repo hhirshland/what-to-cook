@@ -54,20 +54,21 @@ const IngredientsModule = () => {
 
       if (!response.ok) {
         console.error("Error: ", response.statusText);
+        setRecipes(["Error loading recipes"]);
       } else {
-        console.log("in the else alive");
+        //console.log("in the else alive");
         const data = await response.json();
-        console.log(data);
+        //console.log(data);
 
-        console.log("test2");
-        console.log(response);
-        console.log(data);
-        console.log(data.message.content);
-        console.log(data.message.content[0].title);
+        //console.log("test2");
+        //console.log(response);
+        //console.log(data);
+        //console.log(data.message.content);
+        //console.log(data.message.content[0].title);
+        setRecipes(JSON.parse(data.message.content));
       }
-      console.log("got passed error if else alive");
+      //console.log("got passed error if else alive");
 
-      //setRecipes(JSON.parse(data.message.content));
       //console.log(recipes);
       //console.log(recipes)
     } catch (error) {
