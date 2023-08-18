@@ -34,7 +34,7 @@ const IngredientsModule = () => {
   };
 
   const handleSubmit = async (event) => {
-    va.track("FindRecipes");
+    va.track("FindRecipes", { firstIngredient: ingredients[0] });
     setRecipes(["Loading..."]);
     console.log(ingredients);
     try {
