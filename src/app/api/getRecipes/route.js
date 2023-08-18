@@ -11,6 +11,7 @@ export async function POST(request) {
     apiKey: openAIKey,
   });
   const openai = new OpenAIApi(configuration);
+  console.log("made it pase configuration");
 
   const completion = await openai.createChatCompletion({
     model: "gpt-3.5-turbo",
@@ -75,11 +76,12 @@ export async function POST(request) {
       },
     ],
   });
+  console.log("made it past open ai completion");
   console.log(completion.data.choices[0].message);
 
   //const data = request.body;
   return NextResponse.json({
-    message: completion.data.choices[0].message,
+    message: "yo whut", //completion.data.choices[0].message,
   });
 }
 
