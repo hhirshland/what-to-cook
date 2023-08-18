@@ -13,13 +13,14 @@ export async function POST(request) {
   const openai = new OpenAIApi(configuration);
   console.log("made it pase configuration");
 
-  const completion = await openai.createChatCompletion({
-    model: "gpt-3.5-turbo",
-    messages: [
-      { role: "system", content: "You are a helpful assistant." },
-      {
-        role: "user",
-        content: `Please list 3 recipe ideas with the following ingredients: ${req.ingredients}.  It should be structured as a JSON object with the following format:
+  try {
+    const completion = await openai.createChatCompletion({
+      model: "gpt-3.5-turbo",
+      messages: [
+        { role: "system", content: "You are a helpful assistant." },
+        {
+          role: "user",
+          content: `Please list 3 recipe ideas with the following ingredients: ${req.ingredients}.  It should be structured as a JSON object with the following format:
         [
             {
               "title": "Chicken and Rice Casserole:",
@@ -73,16 +74,20 @@ export async function POST(request) {
             }
           ]
           `,
-      },
-    ],
-  });
-  console.log("made it past open ai completion");
-  console.log(completion.data.choices[0].message);
+        },
+      ],
+    });
+    console.log("made it past open ai completion");
+    console.log(completion.data.choices[0].message);
 
-  //const data = request.body;
-  return NextResponse.json({
-    message: "yo whut", //completion.data.choices[0].message,
-  });
+    //const data = request.body;
+    return NextResponse.json({
+      message: "yo whut", //completion.data.choices[0].message,
+    });
+  } catch (error) {
+    console.error(error);
+    return NextResponse.json({
+      message: "error: " + error,
+    });
+  }
 }
-
-//OPENAI API KEY: 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
