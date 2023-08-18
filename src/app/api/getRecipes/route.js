@@ -83,7 +83,7 @@ export async function POST(request) {
 
     //const data = request.body;
     return NextResponse.json({
-      message: "yo whut", //completion.data.choices[0].message,
+      message: completion.data.choices[0].message,
     });
   } catch (error) {
     console.log("in the catch, something went wrong");
