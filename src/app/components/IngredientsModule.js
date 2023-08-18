@@ -55,6 +55,7 @@ const IngredientsModule = () => {
       if (!response.ok) {
         console.error("Error: ", response.statusText);
       } else {
+        console.log("in the else alive");
         const data = await response.json();
         console.log(data);
 
