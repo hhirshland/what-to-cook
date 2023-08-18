@@ -3,6 +3,7 @@
 import { useState } from "react";
 import styles from "./IngredientsModule.module.css"; // Import your CSS module
 import Image from "next/image";
+import va from "@vercel/analytics";
 
 const x = process.env.TEST_KEY;
 
@@ -33,6 +34,7 @@ const IngredientsModule = () => {
   };
 
   const handleSubmit = async (event) => {
+    va.track("FindRecipes");
     setRecipes(["Loading..."]);
     console.log(ingredients);
     try {
