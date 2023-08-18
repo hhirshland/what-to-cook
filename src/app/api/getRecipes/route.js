@@ -14,6 +14,7 @@ export async function POST(request) {
   console.log("made it pase configuration");
 
   try {
+    console.log("in the try, lets give it a go");
     const completion = await openai.createChatCompletion({
       model: "gpt-3.5-turbo",
       messages: [
@@ -85,6 +86,7 @@ export async function POST(request) {
       message: "yo whut", //completion.data.choices[0].message,
     });
   } catch (error) {
+    console.log("in the catch, something went wrong");
     console.error(error);
     return NextResponse.json({
       message: "error: " + error,
